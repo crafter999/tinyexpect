@@ -1,0 +1,22 @@
+{
+  "name": "tinyexpect",
+  "version": "0.1.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crafter999/tinyexpect.git"
+  },
+  "keywords": [
+    "expect"
+  ],
+  "author": "Mak Drakos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crafter999/tinyexpect/issues"
+  },
+  "homepage": "https://github.com/crafter999/tinyexpect#readme"
+}
