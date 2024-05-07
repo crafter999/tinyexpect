@@ -1,19 +1,17 @@
 export function expect(v: any) {
    return {
        toBe: (a: any) => {
-           if (v !== a) {
-               throw new Error(`Expected ${v} to be ${a}`)
-           }
+        if (typeof v === "object"){
+            if (JSON.stringify(v) !== JSON.stringify(a)){
+                throw new Error(`Objects are not equal`)
+            }
+        }
+        if (v !== a) {
+            throw new Error(`Expected ${v} to be ${a}`)
+        }
        },
        eitherOr: (values: any[]) => {
-           let result = false
-           for (let value of values) {
-               if (v === value) {
-                   result = true
-                   break
-               }
-           }
-           if (result === false) {
+           if (!values.includes(v)) {
                throw new Error(
                    `Expected ${v} to be either of the following values:` +
                    JSON.stringify(values)
@@ -38,6 +36,21 @@ export function expect(v: any) {
                return
            }
            expect(v).toBeNumberOrParsed()
+       },
+       toBeFalsy(){
+           if (v){
+                throw new Error(`${v} is not falsy`)
+           }
+       },
+       toBeTruthy(){
+           if (!v){
+                throw new Error(`${v} is not truthy`)
+           }
+       },
+       toBeDefined(){
+           if (typeof v === "undefined"){
+                throw new Error(`${v} is not defined`)
+           }
        }
    }
 }
