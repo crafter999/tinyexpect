@@ -1,6 +1,6 @@
 {
   "name": "tinyexpect",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "keywords": [
     "expect"
   ],
-  "author": "Mak Drakos",
+  "author": "crafter999",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/crafter999/tinyexpect/issues"

@@ -6,10 +6,11 @@ function expect(v) {
         toBe: (a) => {
             if (typeof v === "object") {
                 if (JSON.stringify(v) !== JSON.stringify(a)) {
+                    console.error(`Expected ${JSON.stringify(v, null, 2)} to be ${JSON.stringify(a, null, 2)}`);
                     throw new Error(`Objects are not equal`);
                 }
             }
-            if (v !== a) {
+            else if (v !== a) {
                 throw new Error(`Expected ${v} to be ${a}`);
             }
         },

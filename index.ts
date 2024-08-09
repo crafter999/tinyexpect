@@ -1,14 +1,14 @@
 export function expect(v: any) {
    return {
        toBe: (a: any) => {
-        if (typeof v === "object"){
-            if (JSON.stringify(v) !== JSON.stringify(a)){
-                throw new Error(`Objects are not equal`)
-            }
-        }
-        if (v !== a) {
-            throw new Error(`Expected ${v} to be ${a}`)
-        }
+         if (typeof v === "object") {
+             if (JSON.stringify(v) !== JSON.stringify(a)) {
+                 console.error(`Expected ${JSON.stringify(v,null,2)} to be ${JSON.stringify(a,null,2)}`);
+                 throw new Error(`Objects are not equal`);
+             }
+         } else if (v !== a) {
+             throw new Error(`Expected ${v} to be ${a}`);
+         }
        },
        eitherOr: (values: any[]) => {
            if (!values.includes(v)) {
