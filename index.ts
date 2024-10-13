@@ -60,6 +60,15 @@ export function expect(v: any) {
            if (!(v as string).includes(str)){
                throw new Error(`${v} doesn't contain ${str}`)
            }
-       }
+       },
+       toNotContainString(str:string){
+        if (typeof v !== "string"){
+            throw new Error(`${v} is not a string`)
+        }
+
+        if ((v as string).includes(str)){
+            throw new Error(`${v} contains ${str}`)
+        }
+    }
    }
 }

@@ -61,6 +61,14 @@ function expect(v) {
             if (!v.includes(str)) {
                 throw new Error(`${v} doesn't contain ${str}`);
             }
+        },
+        toNotContainString(str) {
+            if (typeof v !== "string") {
+                throw new Error(`${v} is not a string`);
+            }
+            if (v.includes(str)) {
+                throw new Error(`${v} contains ${str}`);
+            }
         }
     };
 }
