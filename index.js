@@ -53,6 +53,14 @@ function expect(v) {
             if (typeof v === "undefined") {
                 throw new Error(`${v} is not defined`);
             }
+        },
+        toContainString(str) {
+            if (typeof v !== "string") {
+                throw new Error(`${v} is not a string`);
+            }
+            if (!v.includes(str)) {
+                throw new Error(`${v} doesn't contain ${str}`);
+            }
         }
     };
 }
