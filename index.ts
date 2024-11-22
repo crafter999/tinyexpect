@@ -10,6 +10,15 @@ export function expect(v: any) {
              throw new Error(`Expected ${v} to be ${a}`);
          }
        },
+       toNotBe: (a: any) => {
+         if (typeof v === "object"){
+            if (JSON.stringify(v) === JSON.stringify(a)) {
+                 throw new Error(`Expected ${JSON.stringify(v,null,2)} to not be ${JSON.stringify(a,null,2)}`);
+            }
+         } else if (v === a) {
+             throw new Error(`Expected ${v} to not be ${a}`);
+         }
+       },
        eitherOr: (values: any[]) => {
            if (!values.includes(v)) {
                throw new Error(
