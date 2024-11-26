@@ -18,6 +18,12 @@
 - `toContainString(str)`: Checks if string contains a substring
 - `toNotContainString(str)`: Checks if string does not contain a substring
 
+### Example
+```typescript
+import { expect } from "tinyexpect"
+expect("test").toBe("test")
+```
+
 ## Error Handling
 
 All matchers throw descriptive errors when assertions fail, including:
